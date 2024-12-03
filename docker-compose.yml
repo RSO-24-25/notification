@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  notification:
+    build: .
+    environment:
+      - EMAIL=${EMAIL}
+      - SUPER_SECRET=${SUPER_SECRET}
+    ports:
+      - "50051:50051"
