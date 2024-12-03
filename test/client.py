@@ -15,8 +15,8 @@ def run():
     # Send a test email
     response = stub.SendEmail(email_pb2.EmailRequest(
         recipient_email="gal.menase@gmail.com",
-        subject="Super Vsebina",
-        message="""Zelo informativno sporocilo"""
+        subject="Super Vsebina Dneva",
+        message="""Zelo informativno sporocilo, poslano le tebi!"""
     ))
     print("Response from server:", response.status)
 
