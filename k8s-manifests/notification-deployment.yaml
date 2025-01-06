@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: notification-deployment
+  labels:
+    app: notification
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: notification
+  template:
+    metadata:
+      labels:
+        app: notification
+    spec:
+      containers:
+      - name: notification
+        image: your-docker-image-name:latest  # Replace with your Docker image
+        ports:
+        - containerPort: 50051
+        env:
+        - name: EMAIL
+          valueFrom:
+            secretKeyRef:
+              name: notification-secret
+              key: EMAIL
+        - name: SUPER_SECRET
+          valueFrom:
+            secretKeyRef:
+              name: notification-secret
+              key: SUPER_SECRET
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: notification-secret
+type: Opaque
+data:
+  EMAIL: bWF0ZWoua292YWNAbWFpbC5jb20=  # Base64 encoded value of "kovacmateomatejci@gmail.com"
+  SUPER_SECRET: a21wciBnYXJxIGhncGMgcnNldQ==  # Base64 encoded value of "kmpr garq hgpc rseu"
