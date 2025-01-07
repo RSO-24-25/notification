@@ -1,0 +1,9 @@
+replicaCount: 1
+
+image:
+  repository: rsocontainerregistry.azurecr.io/notification
+  tag: dev
+
+secrets:
+  email: bWF0ZWoua292YWNAbWFpbC5jb20=  # Base64 encoded value of "kovacmateomatejci@gmail.com"
+  superSecret: a21wciBnYXJxIGhncGMgcnNldQ==  # Base64 encoded value of "kmpr garq hgpc rseu"

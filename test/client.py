@@ -9,7 +9,7 @@ import email_pb2_grpc
 
 def run():
     # Connect to the server
-    channel = grpc.insecure_channel('localhost:50051')
+    channel = grpc.insecure_channel('72.144.72.133:50051')
     stub = email_pb2_grpc.EmailServiceStub(channel)
     
     # Send a test email
