@@ -12,5 +12,5 @@ service:
   type: ClusterIP
 
 secrets:
-  email: bWF0ZWoua292YWNAbWFpbC5jb20=  # Base64 encoded value of "kovacmateomatejci@gmail.com"
-  superSecret: a21wciBnYXJxIGhncGMgcnNldQ==  # Base64 encoded value of "kmpr garq hgpc rseu"
+  email: kovacmateomatejci@gmail.com  # Base64 encoded value of "kovacmateomatejci@gmail.com"
+  superSecret: kmpr garq hgpc rseu  # Base64 encoded value of "kmpr garq hgpc rseu"
