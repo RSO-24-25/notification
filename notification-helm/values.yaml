@@ -5,6 +5,12 @@ deployment:
   tag: v1
   port: 50051
 
+service:
+  name: notification
+  port: 50051
+  targetPort: 50051
+  type: ClusterIP
+
 secrets:
   email: bWF0ZWoua292YWNAbWFpbC5jb20=  # Base64 encoded value of "kovacmateomatejci@gmail.com"
   superSecret: a21wciBnYXJxIGhncGMgcnNldQ==  # Base64 encoded value of "kmpr garq hgpc rseu"
