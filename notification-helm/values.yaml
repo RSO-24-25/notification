@@ -1,8 +1,8 @@
-replicaCount: 1
-
-image:
-  repository: rsocontainerregistry.azurecr.io/notification
-  tag: v1
+deployment:
+  name: notification
+  replicas: 1
+  image: rsocontainerregistry.azurecr.io/notification:v1
+  port: 50051
 
 secrets:
   email: bWF0ZWoua292YWNAbWFpbC5jb20=  # Base64 encoded value of "kovacmateomatejci@gmail.com"
