@@ -1,7 +1,8 @@
 deployment:
   name: notification
   replicas: 1
-  image: rsocontainerregistry.azurecr.io/notification:v1
+  image: rsocontainerregistry.azurecr.io/notification
+  tag: v1
   port: 50051
 
 secrets:
