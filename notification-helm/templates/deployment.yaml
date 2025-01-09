@@ -22,6 +22,16 @@ spec:
         image: "{{ .Values.deployment.image }}:{{ .Values.deployment.tag }}"
         ports:
         - containerPort: {{ .Values.deployment.port }}
+        livenessProbe:
+          tcpSocket:
+            port: 50051
+          initialDelaySeconds: 20
+          periodSeconds: 120
+        readinessProbe:
+          tcpSocket:
+            port: 50051
+          initialDelaySeconds: 20
+          periodSeconds: 120
         env:
         - name: EMAIL
           valueFrom:
