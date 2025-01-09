@@ -24,14 +24,14 @@ spec:
         - containerPort: {{ .Values.deployment.port }}
         livenessProbe:
           tcpSocket:
-            port: 50051
-          initialDelaySeconds: 20
-          periodSeconds: 120
+            port: {{ .Values.deployment.port }}
+          initialDelaySeconds: {{ .Values.health.initialDelaySeconds }}
+          periodSeconds: {{ .Values.health.periodSeconds }}
         readinessProbe:
           tcpSocket:
-            port: 50051
-          initialDelaySeconds: 20
-          periodSeconds: 120
+            port: {{ .Values.deployment.port }}
+          initialDelaySeconds: {{ .Values.health.initialDelaySeconds }}
+          periodSeconds: {{ .Values.health.periodSeconds }}
         env:
         - name: EMAIL
           valueFrom:

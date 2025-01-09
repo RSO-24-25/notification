@@ -14,3 +14,7 @@ service:
 secrets:
   email: kovacmateomatejci@gmail.com 
   superSecret: kmpr garq hgpc rseu 
+
+health:
+initialDelaySeconds: 20
+periodSeconds: 120
