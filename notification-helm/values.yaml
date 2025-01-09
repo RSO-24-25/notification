@@ -16,5 +16,5 @@ secrets:
   superSecret: kmpr garq hgpc rseu 
 
 health:
-initialDelaySeconds: 20
-periodSeconds: 120
+  initialDelaySeconds: 20
+  periodSeconds: 120
