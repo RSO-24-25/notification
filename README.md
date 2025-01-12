@@ -59,6 +59,12 @@ The Notification Microservice sends email notifications using gmail account and 
 
 ## Usage
 
+### Test Client
+- For testing purposes you can run python client that sends mock notification. Accessible in test directory.
+    ```bash
+    python test/client.py
+    ```
+
 ### CI/CD
 - deploy to kubernetes with git push
 
