@@ -7,8 +7,9 @@ from smtplib import SMTP
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
+from grpc_health.v1 import health, health_pb2, health_pb2_grpc
 
-# test CI/CD
+
 # Load environment variables
 load_dotenv()
 
@@ -52,6 +53,11 @@ class EmailServiceServicer(email_pb2_grpc.EmailServiceServicer):
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     email_pb2_grpc.add_EmailServiceServicer_to_server(EmailServiceServicer(), server)
+    
+    health_servicer = health.HealthServicer()
+    health_pb2_grpc.add_HealthServicer_to_server(health_servicer, server)
+    health_servicer.set('', health_pb2.HealthCheckResponse.SERVING)
+    
     server.add_insecure_port('[::]:50051')  # Listen on port 50051
     print("gRPC server is running on port 50051...")
     server.start()
